@@ -52,3 +52,156 @@ span.blackback{
     color: #efefef;
 }
 
+* {
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+background-color: #101010;
+color: #eeeeee;
+font-family: "Yu Gothic", "Meiryo", sans-serif;
+line-height: 1.9;
+}
+
+/* メインタイトル */
+header {
+min-height: 400px;
+padding: 85px 20px;
+text-align: center;
+background:
+radial-gradient(ellipse at 50% 100%, #681b25 0%, transparent 60%),
+#101010;
+border-bottom: 1px solid #393939;
+}
+
+.sub-title {
+color: #ff4658;
+font-size: 12px;
+letter-spacing: 6px;
+font-weight: bold;
+}
+
+h1 {
+color: #ffffff;
+font-size: clamp(30px, 5vw, 54px);
+line-height: 1.5;
+letter-spacing: 2px;
+margin: 25px 0;
+}
+
+header p:last-child {
+color: #bdbdbd;
+font-size: 14px;
+}
+
+/* コンテンツ全体 */
+main {
+max-width: 900px;
+margin: 65px auto;
+padding: 0 24px;
+}
+
+/* 各セクション */
+section {
+background-color: #191919;
+border: 1px solid #303030;
+border-radius: 5px;
+padding: 32px;
+margin-bottom: 30px;
+transition: border-color 0.3s, transform 0.3s;
+}
+
+section:hover {
+border-color: #e83b4d;
+transform: translateY(-3px);
+}
+
+h2 {
+color: #ff4658;
+font-size: 20px;
+letter-spacing: 1px;
+border-bottom: 1px solid #393939;
+padding-bottom: 14px;
+margin-top: 0;
+}
+
+p {
+color: #d0d0d0;
+font-size: 15px;
+}
+
+/* 作品写真 */
+.photo {
+margin: 25px 0;
+text-align: center;
+}
+
+.photo img {
+width: 100%;
+max-width: 550px;
+height: auto;
+border-radius: 4px;
+border: 1px solid #444444;
+box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* STLダウンロードリンク */
+.file-link {
+display: inline-block;
+margin-top: 12px;
+padding: 13px 24px;
+color: #ffffff;
+background-color: #e83b4d;
+border: 1px solid #e83b4d;
+border-radius: 3px;
+text-decoration: none;
+font-size: 14px;
+font-weight: bold;
+transition: 0.3s;
+}
+
+.file-link:hover {
+background-color: transparent;
+color: #ff5969;
+}
+
+/* ページ下部 */
+footer {
+padding: 25px;
+text-align: center;
+background-color: #090909;
+border-top: 1px solid #303030;
+color: #888888;
+font-size: 11px;
+letter-spacing: 4px;
+}
+
+/* スマートフォン対応 */
+@media (max-width: 600px) {
+header {
+padding: 65px 18px;
+min-height: auto;
+}
+
+h1 {
+font-size: 29px;
+}
+
+main {
+margin: 35px auto;
+padding: 0 14px;
+}
+
+section {
+padding: 22px 18px;
+}
+
+h2 {
+font-size: 18px;
+}
+}
