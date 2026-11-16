@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お弁当の購入傾向分析</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 45px 8%;
+    background: #e9eff2;
+    color: #303b43;
+    font-family: "Yu Gothic", sans-serif;
+}
+
+header {
+    background: white;
+    padding: 40px 25px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+header h1 {
+    font-size: 29px;
+    color: #344b59;
+}
+
+header p {
+    color: #687781;
+    line-height: 1.9;
+}
+
+.section {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+h2 {
+    font-size: 21px;
+    color: #344b59;
+    border-left: 5px solid #8da9b7;
+    padding-left: 13px;
+}
+
+.section p {
+    font-size: 15px;
+    line-height: 2;
+}
+
+.point {
+    background: #f0f4f6;
+    padding: 13px 17px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.photo {
+    margin-top: 22px;
+    text-align: center;
+}
+
+.photo img {
+    width: 70%;
+    max-width: 750px;
+    height: auto;
+    border-radius: 9px;
+    border: 1px solid #dce3e7;
+}
+
+.photo p {
+    font-size: 13px;
+    color: #84919a;
+}
+
+.summary {
+    background: #dfe9ed;
+    padding: 28px;
+    border-radius: 14px;
+    margin-top: 30px;
+    line-height: 2;
+}
+
+footer {
+    text-align: center;
+    color: #89949a;
+    font-size: 12px;
+    margin-top: 35px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>お弁当の購入傾向分析</h1>
+    <p>
+        顧客タイプに注目し、購入数や人気商品、支払い方法などを比較して、
+        それぞれの購入傾向を調べました。
+    </p>
+</header>
+
+<div class="section">
+    <h2>01　顧客タイプ別の購入数</h2>
+    <p>
+        顧客タイプごとの商品購入数を比較しました。
+        観光客や地域住民など、どの顧客タイプの購入数が多いのか、
+        また少ないのかを調べ、主な購入者の特徴を分析します。
+    </p>
+    <div class="point">
+        <strong>比較したもの：</strong><br>
+        顧客タイプごとの商品購入数
+    </div>
+    <div class="photo">
+        <img src="images/画像1.png" alt="顧客タイプ別の購入数">
+        <p>図1　顧客タイプ別の購入数</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>02　顧客タイプ別の人気商品</h2>
+    <p>
+        顧客タイプごとに、各お弁当の商品購入数を比較しました。
+        例えば、観光客と地域住民では、よく購入される商品に
+        どのような違いがあるのかを調べます。
+    </p>
+    <div class="point">
+        <strong>比較したもの：</strong><br>
+        顧客タイプごとの商品別購入数
+    </div>
+    <div class="photo">
+        <img src="images/画像2.png" alt="顧客タイプ別の人気商品">
+        <p>図2　顧客タイプ別の人気商品</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>03　顧客タイプ別の支払い方法</h2>
+    <p>
+        顧客タイプごとに、現金・クレジットカード・電子マネーなどの
+        支払い方法の利用数を比較しました。
+        どの顧客タイプがどの支払い方法を多く利用しているのかを調べます。
+    </p>
+    <div class="point">
+        <strong>比較したもの：</strong><br>
+        顧客タイプごとの支払い方法別利用数
+    </div>
+    <div class="photo">
+        <img src="images/画像3.png" alt="顧客タイプ別の支払い方法">
+        <p>図3　顧客タイプ別の支払い方法</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>04　顧客タイプ別の平均購入金額</h2>
+    <p>
+        顧客タイプごとの平均購入金額を比較しました。
+        観光客と地域住民などで、1回の購入に使う金額に
+        どの程度の違いがあるのかを調べます。
+    </p>
+    <div class="point">
+        <strong>比較したもの：</strong><br>
+        顧客タイプごとの平均購入金額
+    </div>
+    <div class="photo">
+        <img src="images/画像4.png" alt="顧客タイプ別の平均購入金額">
+        <p>図4　顧客タイプ別の平均購入金額</p>
+    </div>
+</div>
+
+<div class="summary">
+    <h2>まとめ</h2>
+    今回は顧客タイプを中心に、購入数・人気商品・支払い方法・
+    平均購入金額の4つを比較しました。
+    それぞれの違いを調べることで、顧客によって購入の仕方や
+    好む商品に違いがあるのかを分析しました。
+    これらの結果を今後の商品選びや販売方法の工夫につなげたいです。
+</div>
+
+<footer>
+    お弁当販売データの分析
+</footer>
+
+</body>
+</html>
