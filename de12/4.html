@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pythonで作ったくじ引きゲーム</title>
+
+<style>
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+padding: 40px 8%;
+background: #f4f3ee;
+color: #333;
+font-family: "Yu Gothic", sans-serif;
+line-height: 1.8;
+}
+
+.container {
+max-width: 900px;
+margin: auto;
+}
+
+header {
+text-align: center;
+padding: 45px 20px;
+background: #e5e9df;
+border-radius: 15px;
+margin-bottom: 35px;
+}
+
+header h1 {
+font-size: 30px;
+margin-bottom: 10px;
+}
+
+header p {
+color: #666;
+}
+
+section {
+background: white;
+padding: 28px;
+margin-bottom: 25px;
+border-radius: 12px;
+}
+
+h2 {
+font-size: 22px;
+border-left: 5px solid #9eae91;
+padding-left: 12px;
+margin-top: 0;
+}
+
+.game {
+text-align: center;
+background: #f8f8f3;
+padding: 25px;
+border-radius: 12px;
+}
+
+input {
+padding: 12px;
+width: 180px;
+font-size: 17px;
+border: 1px solid #bbb;
+border-radius: 6px;
+}
+
+button {
+padding: 12px 25px;
+background: #84977b;
+color: white;
+border: none;
+border-radius: 6px;
+font-size: 16px;
+cursor: pointer;
+margin-left: 8px;
+}
+
+button:hover {
+background: #687e60;
+}
+
+#result {
+font-size: 25px;
+font-weight: bold;
+margin-top: 20px;
+color: #667c5e;
+}
+
+pre {
+background: #282c34;
+color: #e6e6e6;
+padding: 20px;
+border-radius: 8px;
+overflow-x: auto;
+font-size: 14px;
+}
+
+footer {
+text-align: center;
+color: #888;
+padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+<h1>Pythonで作ったくじ引きゲーム</h1>
+<p>数字を選んで今日の運勢を占ってみよう！</p>
+</header>
+<section>
+<h2>作品紹介</h2>
+<p>
+Pythonを使って数字を選ぶと運勢が表示されるくじ引きゲームを作成しました。
+1〜500の数字から好きな数字を選び
+その数字によって大吉・中吉・小吉・吉の
+4種類の結果が出る仕組みになっています。
+</p>
+</section>
+<section>
+<h2>くじ引きゲーム</h2>
+<div class="game">
+<p>1〜500の好きな数字を入力してください。</p>
+
+<input type="number" id="number"
+min="1" max="500" placeholder="数字を入力">
+
+<button onclick="drawFortune()">占う</button>
+
+<div id="result">結果はここに表示されます</div>
+</div>
+</section>
+
+<section>
+<h2>Pythonで作成したコード</h2>
+
+<pre><code>n = int(input("1〜500の数字を選んでね！"))
+
+if n in [1, 5, 45]:
+print("🌟大吉🌟")
+elif n in [7, 14, 21]:
+print("🎊中吉")
+elif n in [3, 13, 33]:
+print("😊小吉")
+else:
+print("😋吉")</code></pre>
+
+</section>
+
+<section>
+<h2>プログラムの仕組み</h2>
+<p>
+このプログラムではif文とelif文、else文を使っています。
+入力された数字が指定された数字の中に含まれているかを
+判断し、それぞれの条件に合った運勢を表示します。
+指定された数字以外が入力された場合は吉と表示されます。
+</p>
+</section>
+
+<section>
+<h2>作ってみた感想</h2>
+<p>
+Pythonを使ってくじ引きゲームを作ってみて
+自分で考えた条件によって結果を変えられることが面白いと感じました。
+また少しのコードでもゲームのようなものを作れることが分かり、
+プログラミングに興味を持ちました。
+</p>
+</section>
+
+<footer>
+デザイン演習 /プログラミング編
+</footer>
+
+</div>
+
+<script>
+function drawFortune() {
+const n = Number(document.getElementById("number").value);
+const result = document.getElementById("result");
+
+if (!Number.isInteger(n) || n < 1 || n > 500) {
+result.textContent = "1〜500の整数を入力してください。";
+return;
+}
+
+if ([1, 5, 45].includes(n)) {
+result.textContent = "🌟 大吉 🌟";
+} else if ([7, 14, 21].includes(n)) {
+result.textContent = "🎊 中吉";
+} else if ([3, 13, 33].includes(n)) {
+result.textContent = "😊 小吉";
+} else {
+result.textContent = "😋 吉";
+}
+}
+</script>
+
+</body>
+</html>
