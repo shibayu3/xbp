@@ -1,27 +1,240 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>XBP_HPsample</title>
-    <link rel="stylesheet" href="./css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XPB | しばゆーポートフォリオ</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background: #101110;
+color: #f5f5f0;
+font-family: Arial, "Noto Sans JP", sans-serif;
+min-height: 100vh;
+}
+
+header {
+height: 85px;
+padding: 0 8%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-bottom: 1px solid #292c27;
+}
+
+.logo {
+color: #c5ff45;
+font-size: 30px;
+font-weight: 900;
+letter-spacing: 3px;
+}
+
+.header-text {
+color: #888;
+font-size: 11px;
+letter-spacing: 3px;
+}
+
+main {
+max-width: 1100px;
+margin: 0 auto;
+padding: 100px 8%;
+}
+
+.label {
+color: #c5ff45;
+font-size: 12px;
+letter-spacing: 5px;
+margin-bottom: 22px;
+}
+
+h1 {
+font-size: clamp(35px, 6vw, 65px);
+line-height: 1.4;
+margin-bottom: 20px;
+}
+
+h1 span {
+color: #c5ff45;
+}
+
+.intro {
+color: #999;
+font-size: 14px;
+line-height: 2;
+margin-bottom: 65px;
+}
+
+.list-title {
+font-size: 20px;
+margin-bottom: 25px;
+}
+
+.portfolio-list {
+display: flex;
+flex-direction: column;
+gap: 18px;
+}
+
+.portfolio-item {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 30px;
+background: #1b1e19;
+border: 1px solid #30352c;
+border-radius: 12px;
+color: white;
+text-decoration: none;
+transition: 0.3s;
+}
+
+.portfolio-item:hover {
+border-color: #c5ff45;
+transform: translateY(-5px);
+background: #22271e;
+}
+
+.item-left {
+display: flex;
+align-items: center;
+gap: 25px;
+}
+
+.number {
+color: #c5ff45;
+font-size: 30px;
+font-weight: bold;
+}
+
+.item-title {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 9px;
+}
+
+.item-description {
+color: #999;
+font-size: 13px;
+}
+
+.arrow {
+color: #c5ff45;
+font-size: 28px;
+}
+
+footer {
+padding: 30px;
+border-top: 1px solid #292c27;
+text-align: center;
+color: #777;
+font-size: 11px;
+letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+header {
+height: 70px;
+padding: 0 6%;
+}
+
+main {
+padding: 75px 6%;
+}
+
+.intro {
+margin-bottom: 45px;
+}
+
+.portfolio-item {
+padding: 23px 17px;
+}
+
+.item-left {
+gap: 15px;
+}
+
+.item-title {
+font-size: 16px;
+}
+
+.item-description {
+font-size: 11px;
+}
+
+.number {
+font-size: 24px;
+}
+}
+</style>
 </head>
+
 <body>
-    <logotohome>
-    <a href="./index.html"><img src="./images/0_XBlogo.png" alt=""></a>
-    </logotohome>
-    <h1>XBP</h1>
-        <h2>しばゆーポートフォリオ一覧</h2>
-        <!-- このようにするとコードとして認識されない。（メモができる）-->
-        <!--番号付きのリスト-->
-        <ol>
-            <li><a href="./de12/index.html">デザイン演習Ⅰ・Ⅱ</a></li>
-            <li><a href="./digi_fab/index.html">デジタルファブリケーション</a></li>
-        </ol>
 
-            
-        <br>
-        <br>
+<header>
+<div class="logo">XPB.</div>
+<div class="header-text">MY PORTFOLIO</div>
+</header>
 
+<main>
+
+<p class="label">WELCOME TO MY PORTFOLIO</p>
+
+<h1>
+しばゆー<br>
+<span>ポートフォリオ</span>
+</h1>
+
+<p class="intro">
+これまでの授業で取り組んだ課題や制作作品を紹介します。<br>
+アイデアを考え、デザインし、実際に形にした記録です。
+</p>
+
+<h2 class="list-title">ポートフォリオ一覧</h2>
+
+<div class="portfolio-list">
+
+<!-- デザイン演習のリンク先 -->
+<a href="de12/" class="portfolio-item">
+<div class="item-left">
+<div class="number">01</div>
+<div>
+<div class="item-title">デザイン演習Ⅰ・Ⅱ</div>
+<p class="item-description">
+デザインの課題・アイデア・制作作品
+</p>
+</div>
+</div>
+<div class="arrow">→</div>
+</a>
+
+<!-- デジタルファブのリンク先 -->
+<a href="digi_fab/" class="portfolio-item">
+<div class="item-left">
+<div class="number">02</div>
+<div>
+<div class="item-title">デジタルファブリケーション</div>
+<p class="item-description">
+3Dプリンターやレーザー加工などの作品
+</p>
+</div>
+</div>
+<div class="arrow">→</div>
+</a>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 SHIBAYU PORTFOLIO
+</footer>
 
 </body>
 </html>

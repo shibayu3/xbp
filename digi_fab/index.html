@@ -1,32 +1,257 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>デジタルファブリケーション</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./images/xbp.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>デジタルファブリケーション | XPB</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+background: #101110;
+color: #f5f5f0;
+font-family: Arial, "Noto Sans JP", sans-serif;
+min-height: 100vh;
+}
+
+header {
+height: 80px;
+padding: 0 8%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #292c27;
+}
+
+.logo {
+color: #c5ff45;
+font-size: 28px;
+font-weight: 900;
+letter-spacing: 3px;
+}
+
+.back-link {
+color: #aaa;
+text-decoration: none;
+font-size: 13px;
+transition: 0.3s;
+}
+
+.back-link:hover {
+color: #c5ff45;
+}
+
+main {
+max-width: 1100px;
+margin: 0 auto;
+padding: 90px 8%;
+}
+
+.label {
+color: #c5ff45;
+font-size: 12px;
+letter-spacing: 5px;
+margin-bottom: 20px;
+}
+
+h1 {
+font-size: clamp(32px, 6vw, 60px);
+line-height: 1.4;
+margin-bottom: 20px;
+}
+
+h1 span {
+color: #c5ff45;
+}
+
+.description {
+color: #999;
+font-size: 14px;
+line-height: 2;
+margin-bottom: 65px;
+}
+
+.section-heading {
+font-size: 23px;
+margin-bottom: 25px;
+}
+
+.section-heading span {
+color: #c5ff45;
+font-size: 12px;
+letter-spacing: 3px;
+margin-right: 12px;
+}
+
+.note-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+}
+
+.note-card {
+display: block;
+padding: 32px;
+min-height: 190px;
+background: #1b1e19;
+border: 1px solid #30352c;
+border-radius: 12px;
+color: white;
+text-decoration: none;
+transition: 0.3s;
+}
+
+.note-card:hover {
+transform: translateY(-6px);
+border-color: #c5ff45;
+background: #22271e;
+}
+
+.note-number {
+color: #c5ff45;
+font-size: 13px;
+letter-spacing: 2px;
+margin-bottom: 22px;
+}
+
+.note-title {
+font-size: 22px;
+font-weight: bold;
+margin-bottom: 15px;
+}
+
+.note-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.note-caption {
+color: #888;
+font-size: 12px;
+}
+
+.arrow {
+color: #c5ff45;
+font-size: 25px;
+}
+
+footer {
+padding: 30px;
+text-align: center;
+color: #777;
+font-size: 11px;
+letter-spacing: 2px;
+border-top: 1px solid #292c27;
+}
+
+@media (max-width: 650px) {
+header {
+padding: 0 6%;
+}
+
+main {
+padding: 65px 6%;
+}
+
+.note-grid {
+grid-template-columns: 1fr;
+}
+
+.note-card {
+min-height: 160px;
+padding: 25px;
+}
+
+.note-title {
+font-size: 19px;
+}
+}
+</style>
 </head>
+
 <body>
-    <logotohome>
-    <a href="../index.html"><img src="./images/0_XBlogo.png" alt=""></a>
-    </logotohome>
-    <h1>デジタルファブリケーション</h1>
-    <h2>演習ノート一覧</h2>
-    <ol>
-    <li><a href="./pinset.html">ピンセット</li>
-    <li><a href="./レーザーカット.html">レーザーカット</a></li>
-    <li><a href="./観察.html">観察</a></li>
-    <li><a href="./問題解決.html">問題解決</a></li>
-    </a></li>
-    
 
+<header>
+<div class="logo">XPB.</div>
+<a href="../index.html" class="back-link">
+← ポートフォリオ一覧へ
+</a>
+</header>
 
+<main>
 
+<p class="label">DIGITAL FABRICATION</p>
 
-    
-<br>
-<br>
+<h1>
+デジタル<br>
+<span>ファブリケーション</span>
+</h1>
 
+<p class="description">
+授業で取り組んだ制作や演習の記録を紹介します。<br>
+アイデアを考え、デジタル技術を使って形にしていきます。
+</p>
+
+<h2 class="section-heading">
+<span>CONTENTS</span>
+演習ノート一覧
+</h2>
+
+<div class="note-grid">
+
+<a href="pinset.html" class="note-card">
+<p class="note-number">01 / WORK</p>
+<h3 class="note-title">ピンセット</h3>
+<div class="note-bottom">
+<p class="note-caption">制作作品・設計記録</p>
+<span class="arrow">→</span>
+</div>
+</a>
+
+<a href="レーザーカット.html" class="note-card">
+<p class="note-number">02 / LASER</p>
+<h3 class="note-title">レーザーカット</h3>
+<div class="note-bottom">
+<p class="note-caption">加工・ものづくりの記録</p>
+<span class="arrow">→</span>
+</div>
+</a>
+
+<a href="観察.html" class="note-card">
+<p class="note-number">03 / RECORD</p>
+<h3 class="note-title">記録</h3>
+<div class="note-bottom">
+<p class="note-caption">授業での活動記録</p>
+<span class="arrow">→</span>
+</div>
+</a>
+
+<a href="問題解決.html" class="note-card">
+<p class="note-number">04 / THINKING</p>
+<h3 class="note-title">問題解決法</h3>
+<div class="note-bottom">
+<p class="note-caption">課題発見と解決のアイデア</p>
+<span class="arrow">→</span>
+</div>
+</a>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 SHIBAYU PORTFOLIO
+</footer>
 
 </body>
 </html>
