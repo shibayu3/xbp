@@ -1,25 +1,286 @@
-<!DOCTYPE html>
-<html lang="jp">
+    <!DOCTYPE html>
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>XBP_HPsample</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./images/xbp.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>デザイン演習Ⅰ・Ⅱ | XPB</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background: #101110;
+color: #f5f5f0;
+font-family: Arial, "Noto Sans JP", sans-serif;
+min-height: 100vh;
+}
+
+header {
+height: 80px;
+padding: 0 8%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #292c27;
+}
+
+.logo {
+color: #c5ff45;
+font-size: 28px;
+font-weight: 900;
+letter-spacing: 3px;
+}
+
+.back-link {
+color: #aaa;
+text-decoration: none;
+font-size: 13px;
+transition: 0.3s;
+}
+
+.back-link:hover {
+color: #c5ff45;
+}
+
+main {
+max-width: 1100px;
+margin: 0 auto;
+padding: 85px 8%;
+}
+
+.label {
+color: #c5ff45;
+font-size: 12px;
+letter-spacing: 5px;
+margin-bottom: 20px;
+}
+
+h1 {
+font-size: clamp(32px, 6vw, 60px);
+line-height: 1.4;
+margin-bottom: 20px;
+}
+
+h1 span {
+color: #c5ff45;
+}
+
+.description {
+color: #999;
+font-size: 14px;
+line-height: 2;
+margin-bottom: 60px;
+}
+
+.section-heading {
+font-size: 23px;
+margin-bottom: 25px;
+}
+
+.section-heading span {
+color: #c5ff45;
+font-size: 12px;
+letter-spacing: 3px;
+margin-right: 12px;
+}
+
+.card-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 18px;
+margin-bottom: 65px;
+}
+
+.card {
+display: block;
+padding: 28px;
+min-height: 160px;
+background: #1b1e19;
+border: 1px solid #30352c;
+border-radius: 12px;
+color: white;
+text-decoration: none;
+transition: 0.3s;
+}
+
+.card:hover {
+transform: translateY(-5px);
+border-color: #c5ff45;
+background: #22271e;
+}
+
+.card-number {
+color: #c5ff45;
+font-size: 13px;
+letter-spacing: 2px;
+margin-bottom: 20px;
+}
+
+.card-title {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 12px;
+}
+
+.card-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.card-caption {
+color: #888;
+font-size: 12px;
+}
+
+.arrow {
+color: #c5ff45;
+font-size: 24px;
+}
+
+footer {
+padding: 30px;
+text-align: center;
+color: #777;
+font-size: 11px;
+letter-spacing: 2px;
+border-top: 1px solid #292c27;
+}
+
+@media (max-width: 650px) {
+header {
+padding: 0 6%;
+}
+
+main {
+padding: 65px 6%;
+}
+
+.card-grid {
+grid-template-columns: 1fr;
+}
+
+.card {
+min-height: 140px;
+padding: 24px;
+}
+}
+</style>
 </head>
+
 <body>
-    <logotohome>
-    <a href="../index.html"><img src="./images/0_XBlogo.png" alt=""></a>
-    </logotohome>
-    <h1>デザイン演習Ⅰ・Ⅱ</h1>
-        <h2>HTMLに関すること</h2>
-        <ol>
-            <li><a href="./hp1.html" target="_blank">htmlの基礎知識</a></li>
-            <li><a href="./hp2.html" target="_blank">htmlのwork</a></li>
-            <li><a href="./test.html" target="_blank">テストページ</a></li>
-        </ol>
-        <h2>演習ノート一覧</h2>
-<ol>
- <li><a href="./1.html">第1回</li>
-<li><a href="./2.html">第2回</li>
-<li><a href="./3.html">第3回</li>
- <li><a href="./4.html">第4回</li>
+
+<header>
+<div class="logo">XPB.</div>
+<a href="../index.html" class="back-link">
+← ポートフォリオ一覧へ
+</a>
+</header>
+
+<main>
+
+<p class="label">DESIGN EXERCISE</p>
+
+<h1>
+デザイン演習<br>
+<span>Ⅰ・Ⅱ</span>
+</h1>
+
+<p class="description">
+デザイン演習Ⅰ・Ⅱで取り組んだ課題や制作の記録を紹介します。<br>
+HTMLを使ったWeb制作や、授業での演習内容をまとめています。
+</p>
+
+<h2 class="section-heading">
+<span>HTML STUDY</span>
+HTMLに関すること
+</h2>
+
+<div class="card-grid">
+
+<a href="./hp1.html" target="_blank" class="card">
+<p class="card-number">01 / BASIC</p>
+<h3 class="card-title">HTMLの基礎知識</h3>
+<div class="card-bottom">
+<p class="card-caption">HTMLの基本を学ぶ</p>
+<span class="arrow">→</span>
+</div>
+</a>
+
+<a href="./hp2.html" target="_blank" class="card">
+<p class="card-number">02 / WORK</p>
+<h3 class="card-title">HTMLのWORK</h3>
+<div class="card-bottom">
+<p class="card-caption">HTMLを使った制作</p>
+<span class="arrow">→</span>
+</div>
+</a>
+
+<a href="./test.html" target="_blank" class="card">
+<p class="card-number">03 / TEST</p>
+<h3 class="card-title">テストページ</h3>
+<div class="card-bottom">
+<p class="card-caption">Webページの動作確認</p>
+<span class="arrow">→</span>
+</div>
+</a>
+
+</div>
+
+<h2 class="section-heading">
+<span>EXERCISE NOTES</span>
+演習ノート一覧
+</h2>
+
+<div class="card-grid">
+
+<a href="1.html" class="card">
+<p class="card-number">01 / EXERCISE</p>
+<h3 class="card-title">第1回</h3>
+<div class="card-bottom">
+<p class="card-caption">第1回の演習記録</p>
+<span class="arrow">→</span>
+</div>
+</a>
+
+<a href="2.html" class="card">
+<p class="card-number">02 / EXERCISE</p>
+<h3 class="card-title">第2回</h3>
+<div class="card-bottom">
+<p class="card-caption">第2回の演習記録</p>
+<span class="arrow">→</span>
+</div>
+</a>
+
+<a href="3.html" class="card">
+<p class="card-number">03 / EXERCISE</p>
+<h3 class="card-title">第3回</h3>
+<div class="card-bottom">
+<p class="card-caption">第3回の演習記録</p>
+<span class="arrow">→</span>
+</div>
+</a>
+
+<a href="4.html" class="card">
+<p class="card-number">04 / EXERCISE</p>
+<h3 class="card-title">第4回</h3>
+<div class="card-bottom">
+<p class="card-caption">第4回の演習記録</p>
+<span class="arrow">→</span>
+</div>
+</a>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 SHIBAYU PORTFOLIO
+</footer>
+
+</body>
+</html>
