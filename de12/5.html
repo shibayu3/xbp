@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COORDI | Find Your Daily Style</title>
+<style>
+:root{--bg:#f5eee3;--paper:#fffaf2;--sand:#eadbc8;--brown:#806b55;--ink:#40372f;--line:#dfd2c2;--accent:#a48666}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Yu Gothic",sans-serif;line-height:1.85}
+.top{position:sticky;top:0;z-index:5;background:#fffaf2ed;border-bottom:1px solid var(--line);padding:14px 7%;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font:bold 25px Georgia,serif;letter-spacing:.18em}
+nav{display:flex;gap:17px;flex-wrap:wrap;font-size:12px}
+nav a{color:var(--brown);text-decoration:none}
+.hero{padding:80px 9%;min-height:360px;background:radial-gradient(ellipse at 85% 25%,#ffffffb8,transparent 35%),linear-gradient(130deg,#e7d5c0,#f8f1e7 55%,#d9c4aa)}
+.eyebrow,.kicker{font:12px Georgia,serif;letter-spacing:.2em;color:var(--brown)}
+h1{font:clamp(58px,11vw,112px)/1 Georgia,serif;letter-spacing:.13em;margin:12px 0;color:#554638}
+.hero p{color:#6e6257}
+main{width:min(1000px,88%);margin:34px auto}
+section{background:var(--paper);padding:clamp(22px,5vw,44px);margin:28px 0;border:1px solid #a0876c2b;border-radius:22px;box-shadow:0 10px 28px #55412d0b}
+h2{font:27px Georgia,serif;letter-spacing:.07em;margin:5px 0 18px}
+h3{font-size:16px;margin:0 0 7px}
+.muted{color:#75685d}
+.intro{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+.quote{background:#f1e7da;border-radius:17px;padding:25px;font:20px "Yu Mincho",serif;color:#695847}
+.steps,.points{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:20px}
+.step,.point{background:#fffdf9;border:1px solid var(--line);border-radius:15px;padding:17px}
+.num{font:25px Georgia,serif;color:var(--accent)}
+.app{background:#f1e7da;padding:22px;border-radius:18px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:13px;font-weight:bold;color:#655648;margin-bottom:5px}
+select{width:100%;padding:11px;border:1px solid #d6c5b1;border-radius:9px;background:#fffdf9;color:var(--ink);font:inherit}
+button{margin-top:18px;border:0;border-radius:30px;padding:12px 25px;background:var(--accent);color:white;font:inherit;cursor:pointer}
+button:hover{opacity:.85}
+#result{display:none;background:#fffaf2;border:1px solid var(--line);border-radius:15px;padding:20px;margin-top:18px}
+.resultgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.resultitem{background:#f4ece2;padding:12px;border-radius:10px}
+.resultitem small{display:block;color:#8d8175}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:12px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--brown)}
+pre{white-space:pre;overflow:auto;background:#302d2a;color:#f7eee4;border-radius:14px;padding:18px;font:12px/1.7 Consolas,monospace}
+.point{border:0;border-left:3px solid var(--accent);background:#f7f1e9}
+.points{grid-template-columns:1fr 1fr}
+small.note{color:#8d8175}
+footer{text-align:center;padding:30px;color:#8d8175;font:12px Georgia,serif;letter-spacing:.15em}
+@media(max-width:680px){
+.top{align-items:flex-start;flex-direction:column}
+nav{gap:11px}
+.intro,.steps,.fields,.points{grid-template-columns:1fr}
+.hero{padding:65px 8%}
+.resultgrid{grid-template-columns:1fr 1fr}
+table{font-size:12px}
+th,td{padding:8px 5px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+<div class="logo">COORDI</div>
+<nav>
+<a href="#about">アプリについて</a>
+<a href="#how">使い方</a>
+<a href="#try">コーデを提案</a>
+<a href="#tech">学んだ言語</a>
+<a href="#code">プログラムのコード</a>
+</nav>
+</header>
+
+<div class="hero">
+<div class="eyebrow">毎日のコーディネートを見つけよう</div>
+<h1>COORDI</h1>
+<p>今日の気分や好みに合わせて、服装選びをもっと楽しく</p>
+</div>
+
+<main>
+
+<section id="about">
+<h2>このアプリを作った理由</h2>
+<div class="intro">
+<div>
+<p class="muted">毎朝、何を着ていくか迷うことはありませんか？</p>
+<p>気温や季節、出かける場所によって着たい服や適した服装は変わります。
+    そこでいくつかの項目を選ぶだけでコーディネートのヒントが見つかるアプリ「COORDI」を作りました。
+    服装を決める時間を少しでも楽しくし、自分では思いつかなかった組み合わせに出会えるかもしれません。</p>
+</div>
+<div class="quote">「何を着よう？」を<br>「これを着て出かけよう！」にする</div>
+</div>
+</section>
+
+<section id="how">
+<h2>アプリの使い方</h2>
+<p class="muted">画面の項目を選択して、ボタンを押すとおすすめの服装が表示されます。</p>
+<div class="steps">
+<div class="step">
+<div class="num">01</div>
+<h3>条件を選ぶ</h3>
+<p>季節・気温・系統・好きな色・出かける場面を選択します</p>
+</div>
+<div class="step">
+<div class="num">02</div>
+<h3>提案ボタンを押す</h3>
+<p>選んだ条件をもとにプログラムが服装を組み合わせます</p>
+</div>
+<div class="step">
+<div class="num">03</div>
+<h3>結果を確認する</h3>
+<p>トップスやパンツ、靴などの提案を確認します</p>
+</div>
+</div>
+</section>
+
+<section id="try">
+<h2>コーディネートを提案</h2>
+<p class="muted">下の項目を選んで、提案ボタンを押してください。</p>
+
+<div class="app">
+<div class="fields">
+<div>
+<label for="season">季節</label>
+<select id="season">
+<option>春</option><option>夏</option><option>秋</option><option>冬</option>
+</select>
+</div>
+<div>
+<label for="temp">気温</label>
+<select id="temp">
+<option value="warm">暖かい（20℃以上）</option>
+<option value="mild">少し肌寒い（10〜19℃）</option>
+<option value="cold">寒い（9℃以下）</option>
+</select>
+</div>
+<div>
+<label for="style">ファッションの系統</label>
+<select id="style">
+<option>カジュアル</option><option>きれいめ</option><option>ストリート</option><option>シンプル</option><option>韓国風</option>
+</select>
+</div>
+<div>
+<label for="color">好きな色</label>
+<select id="color">
+<option>白</option><option>黒</option><option>ネイビー</option><option>グレー</option><option>ベージュ</option>
+</select>
+</div>
+<div>
+<label for="scene">出かける場面</label>
+<select id="scene">
+<option>大学</option><option>友達と遊ぶ</option><option>デート</option><option>アルバイト</option><option>買い物</option>
+</select>
+</div>
+</div>
+
+<button onclick="suggestOutfit()">コーディネートを提案する</button>
+
+<div id="result" aria-live="polite">
+<h3>あなたへのおすすめコーデ</h3>
+<p id="introResult"></p>
+<div class="resultgrid">
+<div class="resultitem"><small>トップス</small><strong id="topResult"></strong></div>
+<div class="resultitem"><small>パンツ</small><strong id="bottomResult"></strong></div>
+<div class="resultitem"><small>靴</small><strong id="shoesResult"></strong></div>
+<div class="resultitem"><small>コーディネートのポイント</small><strong id="pointResult"></strong></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="tech">
+<h2>使用したプログラミング言語・技術</h2>
+<table>
+<tr><th>言語・技術</th><th>役割</th><th>この作品での使い方</th></tr>
+<tr><td>Python</td><td>プログラムを記述する言語</td><td>季節やファッションの系統に応じて服装を決めるプログラムを作成</td></tr>
+<tr><td>JavaScript</td><td>Webページに機能や動きを加える</td><td>選択された条件を読み取り、コーディネートの結果を表示</td></tr>
+</table>
+<h3 style="margin-top:24px">プログラムで使った仕組み</h3>
+<table>
+<tr>
+<th>仕組み</th>
+<th>意味・役割</th>
+<th>COORDIでの使い方</th>
+</tr>
+<tr>
+<td>if</td>
+<td>最初の条件を確認する</td>
+<td>どの季節かを確認し、春なら薄手のシャツを選ぶ</td>
+</tr>
+<tr>
+<td>elif</td>
+<td>前の条件に当てはまらなかった場合、別の条件を確認する</td>
+<td>春ではなかった場合に夏や秋かどうかを確認する</td>
+</tr>
+<tr>
+<td>else</td>
+<td>どの条件にも当てはまらなかった場合に実行する</td>
+<td>春・夏・秋のどれでもなければ冬の服装を選ぶ</td>
+</tr>
+<tr>
+<td>function</td>
+<td>処理をひとまとめにして、必要なときに呼び出して実行する</td>
+<td>コーディネートを提案する処理をまとめる</td>
+</tr>
+<tr>
+<td>def</td>
+<td>Pythonで関数を定義するときに使う命令</td>
+<td>今回は服装なのでdef recommend_outfit と書く。普段はdefの後ろに関数が来る</td>
+</tr>
+</table>
+<section id="code">
+<h2>Pythonプログラムのコード</h2>
+<pre><code># COORDI：コーディネート提案プログラム
+# 季節・系統・好きな色から服装を提案する
+
+def recommend_outfit(season, style, color):
+
+# 季節に合わせて基本の服装を決める
+if season == "春":
+top = "薄手のシャツ"
+bottom = "デニムパンツ"
+elif season == "夏":
+top = "半袖Tシャツ"
+bottom = "ワイドパンツ"
+elif season == "秋":
+top = "スウェット"
+bottom = "チノパン"
+else:
+top = "ニットやパーカー"
+bottom = "暖かいデニムパンツ"
+
+# 系統に合わせて服装を変更する
+if style == "きれいめ":
+top = "シンプルなシャツ"
+bottom = "スラックス"
+elif style == "ストリート":
+top = "オーバーサイズのパーカー"
+bottom = "ワイドデニム"
+elif style == "シンプル":
+top = "無地のトップス"
+
+# 選んだ条件とおすすめの服装を表示する
+print("\\n===== COORDIのおすすめ =====")
+print("季節：" + season)
+print("系統：" + style)
+print("好きな色：" + color)
+print("トップス：" + top)
+print("パンツ：" + bottom)
+print("============================")
+
+
+# ユーザーに好みを入力してもらう
+print("COORDIへようこそ！")
+season = input("季節（春・夏・秋・冬）：")
+style = input("系統（カジュアル・きれいめ・ストリート・シンプル）：")
+color = input("好きな色（白・黒・ネイビー・グレー・ベージュ）：")
+
+recommend_outfit(season, style, color)</code></pre>
+<section id="summary">
+<h2>制作を終えて</h2>
+<p>COORDIを制作してプログラミングを使えば普段の生活の中にある
+    服装を選ぶという悩みも便利で楽しい仕組みにできると感じました。
+    条件分岐を使って入力内容に合わせた提案をすることでプログラムの基本的な仕組みを
+    学ぶことができました。また機能だけでなく、色や配置、説明にもこだわることが大切だと分かりました。
+    </p>
+</section>
+
+</main>
+
+<footer>デザイン演習/アプリ作成</footer>
+
+<script>
+// 選択された条件を読み取り、コーディネートを提案する関数
+function suggestOutfit(){
+const season=document.getElementById("season").value;
+const temp=document.getElementById("temp").value;
+const style=document.getElementById("style").value;
+const color=document.getElementById("color").value;
+const scene=document.getElementById("scene").value;
+
+// 気温に合わせて基本の服装を決める
+let top=temp==="warm"?"半袖Tシャツ":temp==="mild"?"スウェット":"ニットまたはパーカー";
+let bottom=temp==="warm"?"ワイドパンツ":temp==="mild"?"チノパン":"厚手のパンツ";
+let shoes="白いスニーカー";
+
+// 系統によって服装を変更する
+if(style==="きれいめ"){
+top="シンプルなシャツ";
+bottom="スラックス";
+shoes="ローファー";
+}
+else if(style==="ストリート"){
+top="オーバーサイズのパーカー";
+bottom="ワイドデニム";
+shoes="ボリュームスニーカー";
+}
+else if(style==="シンプル"){
+top="無地のトップス";
+bottom="ストレートパンツ";
+}
+else if(style==="韓国風"){
+top="ゆったりしたシャツ";
+bottom="ワイドスラックス";
+shoes="シンプルなスニーカー";
+}
+
+// 場面に合わせたコーディネートのポイント
+const tips={
+"大学":"長時間過ごしても疲れにくい組み合わせ",
+"友達と遊ぶ":"動きやすさとおしゃれを両立",
+"デート":"清潔感のある色合わせを意識",
+"アルバイト":"落ち着いた印象で動きやすく",
+"買い物":"歩きやすい靴を選ぶのがおすすめ"
+};
+
+document.getElementById("introResult").textContent=
+season+"・"+scene+"向けの「"+style+"」コーデ。"+color+"をトップスや小物に取り入れるのがおすすめです。";
+
+document.getElementById("topResult").textContent=top;
+document.getElementById("bottomResult").textContent=bottom;
+document.getElementById("shoesResult").textContent=shoes;
+document.getElementById("pointResult").textContent=tips[scene];
+
+document.getElementById("result").style.display="block";
+}
+</script>
+
+</body>
+</html>
